@@ -1,0 +1,12 @@
+
+
+<md-card class="demo-card demo-basic">
+  <md-toolbar color="primary">Basic</md-toolbar>
+  <md-card-content>
+    <form (ngSubmit)="save()" #postForm="ngForm">
+      <md-input id="title" name="title" [(ngModel)]="post.title" placeholder="Title" style="width: 100%"></md-input>
+      <md-textarea id="content" name="content" [(ngModel)]="post.content" placeholder="Content"></md-textarea>
+      <button md-raised-button type="submit" [disabled]="!postForm.form.valid">Guardar</button>
+    </form>
+  </md-card-content>
+</md-card>

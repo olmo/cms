@@ -1,0 +1,7 @@
+<md-list>
+   <md-list-item *ngFor="let post of posts | async"> {{post.title}} </md-list-item>
+</md-list>
+
+<a md-fab routerLink="./add">
+    <md-icon class="md-24">add</md-icon>
+</a>
