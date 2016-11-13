@@ -6,14 +6,15 @@ import { AuthGuard } from './auth-guard.service';
   imports: [
     RouterModule.forRoot([
       {
-        path: '',
-        loadChildren: 'app/blog/blog.module#BlogModule'
-      },
-      {
         path: 'admin',
         loadChildren: 'app/admin/admin.module#AdminModule',
         canLoad: [AuthGuard]
-      }
+      },
+      {
+        path: '',
+        loadChildren: 'app/frontend/frontend.module#FrontendModule'
+      },
+      
     ])
   ],
   exports: [

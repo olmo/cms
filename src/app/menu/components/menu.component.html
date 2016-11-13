@@ -1,0 +1,12 @@
+<div class="nav">
+    <ul (mouseover)="over($event)" (mouseout)="out($event)">
+        <li *ngFor="let item of items">
+            <a [routerLink]="[item.link, item.param]" *ngIf="item.link!=''">{{item.title}}</a>
+            <a [routerLink]="" *ngIf="item.link==''">{{item.title}}</a>
+            <ul *ngIf="item.subitems">
+                <li *ngFor="let subitem of item.subitems"><a [routerLink]="[subitem.link, subitem.param]">{{subitem.title}}</a></li>
+            </ul>
+        </li>
+        <li class='lamp' [style.left.px]='left' [style.width.px]='width'><span></span></li>
+    </ul>
+</div>

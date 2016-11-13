@@ -1,12 +1,13 @@
+import { BlogDetailComponent } from './components/blog-detail.component';
+import { BlogListComponent } from './components/blog-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-import { BlogListComponent } from './blog-list.component';
 
 @NgModule({
     imports: [
         RouterModule.forChild([
             { path: '', component: BlogListComponent },
+            { path: ':id', component: BlogDetailComponent },
         ])
     ],
     exports: [

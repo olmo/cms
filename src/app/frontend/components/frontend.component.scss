@@ -1,0 +1,76 @@
+.frontend {
+    background: url(../assets/images/background/bg-8.jpg);
+
+    color: #333;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+
+    a {
+        color: #111;
+        text-decoration: none !important;
+    }
+
+    h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a {
+        color: #111;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+        text-rendering: optimizelegibility;
+    }
+
+    
+    h1 { font-size: 36px; }
+
+    h2 { font-size: 30px; }
+
+    h3 { font-size: 24px; }
+
+    h4 { font-size: 18px; }
+
+    h5 { font-size: 14px; }
+
+    h6 { font-size: 12px; }
+
+    h4 { font-weight: 600; }
+
+    h5,
+    h6 { font-weight: bold; margin-bottom: 20px; }
+
+    p,
+    p.lead {
+        color: #696f6f;
+        margin-bottom: 20px;
+    }
+
+    a:hover {
+        color: #26B8F3;
+    }
+
+    .container {
+        width: 1170px;
+        margin: auto;
+        background: white;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .page-header {
+        background: #39c381;
+        padding: 0;
+    }
+
+    ::-moz-selection {
+        background: #26B8F3;
+        color: #fff;
+        text-shadow: none;
+    }
+    ::selection {
+        background: #26B8F3;
+        text-shadow: none;
+        color: #fff;
+    }
+}
+
+

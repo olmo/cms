@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import "../node_modules/quill/dist/quill.snow.css";
+@import '../node_modules/@swimlane/ngx-datatable/release/datatable.css';
+@import '../node_modules/@swimlane/ngx-datatable/release/material.css';
+@import '../node_modules/@swimlane/ngx-datatable/release/assets/icons.css';

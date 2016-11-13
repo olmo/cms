@@ -1,6 +1,1 @@
-export const firebaseConfig = {
-  apiKey: '<your-key>',
-  authDomain: '<your-project-authdomain>',
-  databaseURL: '<your-database-URL>',
-  storageBucket: '<your-storage-bucket>'
-};
+export const API_URL = 'http://127.0.0.1:3000';
