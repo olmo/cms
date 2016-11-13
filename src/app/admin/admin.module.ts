@@ -7,13 +7,15 @@ import { AdminDashboardComponent }  from './admin-dashboard.component';
 
 import { AdminRoutingModule }       from './admin-routing.module';
 import { BlogAdminModule } from '../blog/admin/blog-admin.module';
+import { PagesAdminModule } from '../pages/admin/pages-admin.module';
 
 @NgModule({
   imports: [
     CommonModule,
     AdminRoutingModule,
     MaterialModule.forRoot(),
-    BlogAdminModule
+    BlogAdminModule,
+    PagesAdminModule
   ],
   declarations: [
     AdminComponent,

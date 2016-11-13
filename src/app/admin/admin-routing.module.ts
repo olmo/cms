@@ -3,8 +3,6 @@ import { RouterModule } from '@angular/router';
 
 import { AdminComponent }           from './admin.component';
 import { AdminDashboardComponent }  from './admin-dashboard.component';
-import { BlogAdminListComponent } from '../blog/admin/blog-admin-list.component';
-import { BlogAdminDetailComponent } from '../blog/admin/blog-admin-detail.component';
 import { AuthGuard } from '../auth-guard.service';
 
 @NgModule({
@@ -19,6 +17,7 @@ import { AuthGuard } from '../auth-guard.service';
             path: '',
             children: [
               { path: '', component: AdminDashboardComponent },
+              { path: 'pages', loadChildren: 'app/pages/admin/pages-admin.module#PagesAdminModule' },
               { path: 'blog', loadChildren: 'app/blog/admin/blog-admin.module#BlogAdminModule' }
             ]
           }

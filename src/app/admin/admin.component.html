@@ -1,9 +1,8 @@
 <md-sidenav-layout>
-    <md-sidenav #sidenav mode="side">
+    <md-sidenav #sidenav mode="side" [opened]="sidenavOpened">
         <md-list>
+            <md-list-item><a routerLink="./pages" routerLinkActive="active">Pages</a></md-list-item>
             <md-list-item><a routerLink="./blog" routerLinkActive="active">Blog</a></md-list-item>
-            <md-list-item> Salt </md-list-item>
-            <md-list-item> Paprika </md-list-item>
         </md-list>
     </md-sidenav>
 

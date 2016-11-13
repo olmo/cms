@@ -4,9 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
-import { BlogAdminListComponent }           from './blog-admin-list.component';
-import { BlogAdminFormComponent }  from './blog-admin-form.component';
-import { BlogAdminRoutingModule } from './blog-admin-routing.module';
+import { PagesListComponent }           from './pages-list.component';
+import { PagesRoutingModule } from './pages-routing.module';
 
 @NgModule({
   imports: [
@@ -14,12 +13,11 @@ import { BlogAdminRoutingModule } from './blog-admin-routing.module';
     HttpModule,
     FormsModule,
     MaterialModule.forRoot(),
-    BlogAdminRoutingModule
+    PagesRoutingModule
   ],
   declarations: [
-    BlogAdminListComponent,
-    BlogAdminFormComponent,
+    PagesListComponent,
   ],
   providers: [],
 })
-export class BlogAdminModule {}
+export class PagesModule {}

@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
-    selector: 'blog-admin-detail',
-    templateUrl: 'blog-admin-detail.component.html'
+    selector: 'blog-admin-form',
+    templateUrl: 'blog-admin-form.component.html'
 })
-export class BlogAdminDetailComponent implements OnInit {
+export class BlogAdminFormComponent implements OnInit {
     public post:any = {};
 
     constructor(private af: AngularFire) { }
