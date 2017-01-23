@@ -1,0 +1,14 @@
+<md-card style="margin: 20px">
+  <md-card-title>Menu</md-card-title>
+  <md-card-content fxLayout="column" >
+    <form (ngSubmit)="save()" #menuForm="ngForm">
+        <md-input-container>
+            <input md-input id="title" name="title" [(ngModel)]="menu.title" placeholder="Title" style="width: 100%">
+        </md-input-container>
+      <md-input-container>
+        <textarea md-input id="content" name="content" [(ngModel)]="menu.content" placeholder="Content"></textarea>
+        </md-input-container>
+      <button md-raised-button type="submit" [disabled]="!menuForm.form.valid" fxFlex  style="margin-top: 20px">Guardar</button>
+    </form>
+  </md-card-content>
+</md-card>

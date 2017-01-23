@@ -1,0 +1,36 @@
+<md-toolbar color="primary">
+    <button md-button class="app-icon-button" (click)="sidenav.toggle()">
+        <i class="material-icons app-toolbar-menu">menu</i>
+    </button> 
+
+    Administration
+
+    <span class="app-toolbar-filler"></span>
+</md-toolbar>
+
+<md-sidenav-layout>
+    <md-sidenav #sidenav mode="side" [opened]="sidenavOpened" class="sidenav">
+        <nav>
+            <h3>Páginas</h3>
+            <ul>
+                <li><a routerLink="./pages" routerLinkActive="active">Pages</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <h3>Menú</h3>
+            <ul>
+                <li><a routerLink="./menu" routerLinkActive="active">Menú</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <h3>Blog</h3>
+            <ul>
+                <li><a routerLink="./blog" routerLinkActive="active">Posts</a></li>
+                <li><a routerLink="./blog/categories" routerLinkActive="active">Categorías</a></li>
+            </ul>
+        </nav>
+    </md-sidenav>
+
+    <router-outlet></router-outlet>
+    
+</md-sidenav-layout>

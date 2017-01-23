@@ -1,0 +1,6 @@
+<div class="page-header">
+    <h1>Blog</h1>
+</div>
+<h3>{{post.title}}</h3>
+<div>{{post.user?.name}} {{post.createdAt | date:fullDate}} {{post.category?.name}}</div>
+<div [innerHTML]="post.cabecera | safeHtml"></div>

@@ -1,0 +1,17 @@
+<h2>LOGIN</h2>
+<p>{{message}}</p>
+<p>
+    <button (click)="login()" *ngIf="!authService.isLoggedIn">Login</button>
+    <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+</p>
+
+<md-card class="demo-card demo-basic">
+  <md-toolbar color="primary">Login</md-toolbar>
+  <md-card-content>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <md-input id="email" name="email" [(ngModel)]="data.email" placeholder="Email" style="width: 100%"></md-input>
+      <md-input id="password" name="password" [(ngModel)]="data.password" placeholder="Password" style="width: 100%"></md-input>
+      <button md-raised-button type="submit" [disabled]="!loginForm.form.valid">Entrar</button>
+    </form>
+  </md-card-content>
+</md-card>

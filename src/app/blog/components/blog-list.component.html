@@ -1,0 +1,39 @@
+<carousel></carousel>
+<div id="blog-content">
+    <div class="items">
+        <article class="clearfix" *ngFor="let post of posts | async">
+            <div class="post-title">
+                <h3><a [routerLink]="['/blog', post.id]" >{{post.title}}</a></h3>
+            </div>
+            <div class="post-info">
+                <span class="post-autor">Publicado por: <a href="#">{{post.user.name}}</a></span>
+                <span class="post-category">en <a href="#">{{post.category.name}}</a></span>
+            </div>
+            <div [innerHTML]="post.cabecera | safeHtml"></div>
+            <div class="post-read-more">
+                <a class="read-more" [routerLink]="['/blog', post.id]">Leer más <md-icon>arrow_forward</md-icon></a>
+            </div>
+
+            <div class="post-meta">
+                <div class="post-date">
+                    <span class="post-date-day">{{post.createdAt | date:'dd'}}</span>
+                    <span class="post-date-month">{{post.createdAt | date:'MMMM'}}</span>
+                    <span class="post-date-year">{{post.createdAt | date:'yyyy'}}</span>
+                </div>
+
+                <div class="post-comments">
+                    <a href="#">
+                        <i class="fa fa-comments-o"></i>
+                        <span class="post-comments-number">324</span>
+                    </a>
+                </div>
+                <div class="post-comments">
+                    <a href="#">
+                        <i class="fa fa-share-alt"></i>
+                        <span class="post-comments-number">324</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

@@ -1,8 +1,8 @@
+import { AdminDashboardComponent } from './components/admin-dashboard.component';
+import { AdminComponent } from './components/admin.component';
 import { NgModule }     from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AdminComponent }           from './admin.component';
-import { AdminDashboardComponent }  from './admin-dashboard.component';
 import { AuthGuard } from '../auth-guard.service';
 
 @NgModule({
@@ -17,8 +17,10 @@ import { AuthGuard } from '../auth-guard.service';
             path: '',
             children: [
               { path: '', component: AdminDashboardComponent },
-              { path: 'pages', loadChildren: 'app/pages/admin/pages-admin.module#PagesAdminModule' },
-              { path: 'blog', loadChildren: 'app/blog/admin/blog-admin.module#BlogAdminModule' }
+              { path: 'blog', loadChildren: 'app/blog/blog-admin.module#BlogAdminModule' },
+              { path: 'pages', loadChildren: 'app/pages/pages-admin.module#PagesAdminModule' },
+              { path: 'users', loadChildren: 'app/users/users-admin.module#UsersAdminModule' },
+              { path: 'menu', loadChildren: 'app/menu/menu-admin.module#MenuAdminModule' }
             ]
           }
         ]

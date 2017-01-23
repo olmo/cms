@@ -1,0 +1,43 @@
+
+
+<form (ngSubmit)="save()" #postForm="ngForm">
+    <div fxLayout="row">
+        <md-input-container fxFlex>
+            <input md-input id="name" name="title" [(ngModel)]="category.name" placeholder="Nombre" >
+        </md-input-container>
+        <button md-raised-button type="submit" [disabled]="!postForm.form.valid">Añadir</button>
+    </div>
+</form>
+
+<ngx-datatable class="material" [rows]="categories" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [columnMode]="'force'"
+    [limit]="10">
+
+    <ngx-datatable-column name="name">
+        <template let-column="column" ngx-datatable-header-template>
+            Nombre
+        </template>
+        <template let-value="value" ngx-datatable-cell-template let-row="row">
+            <span
+              title="Double click to edit"
+              (dblclick)="editing[row.$$index + '-name'] = true"
+              *ngIf="!editing[row.$$index + '-name']">
+              {{value}}
+            </span>
+            <input
+              autofocus
+              (blur)="updateValue($event, 'name', value, row)"
+              *ngIf="editing[row.$$index + '-name']"
+              type="text"
+              [value]="value"
+            />
+        </template>
+    </ngx-datatable-column>
+    <ngx-datatable-column>
+        <template ngx-datatable-header-template>
+            Acciones
+        </template>
+        <template let-row="row" ngx-datatable-cell-template>
+            <button md-raised-button><md-icon>delete</md-icon></button>
+        </template>
+    </ngx-datatable-column>
+</ngx-datatable>

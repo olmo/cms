@@ -1,0 +1,37 @@
+<ngx-datatable class="material" [rows]="posts" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [columnMode]="'force'"
+    [limit]="10">
+
+    <ngx-datatable-column name="title">
+        <template let-column="column" ngx-datatable-header-template>
+            Título
+        </template>
+        <template let-value="value" ngx-datatable-cell-template>
+            <strong>{{value}}</strong>
+        </template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="user">
+        <template let-column="column" ngx-datatable-header-template>
+            Usuario
+        </template>
+        <template let-row="row" let-value="value" ngx-datatable-cell-template>
+            {{value.name}}
+        </template>
+    </ngx-datatable-column>
+    <ngx-datatable-column>
+        <template ngx-datatable-header-template>
+            Acciones
+        </template>
+        <template let-row="row" ngx-datatable-cell-template>
+            <a md-raised-button [routerLink]="['/admin/blog', row.id]"><md-icon>mode_edit</md-icon></a>
+            <button md-raised-button><md-icon>delete</md-icon></button>
+        </template>
+    </ngx-datatable-column>
+</ngx-datatable>
+
+<div fxLayout="column"
+     fxLayoutAlign="end end">
+
+    <a md-fab routerLink="./add" fxFlex style="margin: 10px;">
+        <md-icon class="md-24">add</md-icon>
+    </a>
+</div>
