@@ -5,6 +5,7 @@
   <md-card-content>
     <form (ngSubmit)="save()" #pageForm="ngForm">
       <md-input id="title" name="title" [(ngModel)]="page.title" placeholder="Title" style="width: 100%"></md-input>
+      <md-input id="slug" name="slug" [(ngModel)]="page.slug" placeholder="Slug" style="width: 100%"></md-input>
       <md-textarea id="content" name="content" [(ngModel)]="page.content" placeholder="Content"></md-textarea>
       <button md-raised-button type="submit" [disabled]="!pageForm.form.valid">Guardar</button>
     </form>
