@@ -12,7 +12,6 @@ export class BlogAdminFormComponent implements OnInit {
     public post:any = {};
     public categories = [];
     private quill;
-    private quill2;
 
     constructor(private postService: PostService, private router: Router, private route: ActivatedRoute, private categoryService: CategoryService) { }
 
@@ -22,13 +21,13 @@ export class BlogAdminFormComponent implements OnInit {
             this.postService.get(id).subscribe(res => {
                 this.post = res;
 
-                setTimeout(() => {
-                    this.initWysiwyg();
-                }, 100);
+                // setTimeout(() => {
+                //     this.initWysiwyg();
+                // }, 100);
             });
         }
         else{
-            this.initWysiwyg();
+            // this.initWysiwyg();
         }
         
         this.categoryService.getAll().subscribe(res => {
@@ -48,14 +47,10 @@ export class BlogAdminFormComponent implements OnInit {
         this.quill = new Quill('#editor', {
             theme: 'snow'
         });
-        this.quill2 = new Quill('#editor2', {
-            theme: 'snow'
-        });
     }
 
     save(){
-        this.post.cabecera = this.quill.container.firstChild.innerHTML;
-        this.post.content = this.quill2.container.firstChild.innerHTML;
+        //this.post.content = this.quill.container.firstChild.innerHTML;
 
         if('id' in this.post){
             this.postService.update(this.post).subscribe(res => {

@@ -2,9 +2,13 @@
   <md-card-title>Post</md-card-title>
   <md-card-content fxLayout="column" >
     <form (ngSubmit)="save()" #postForm="ngForm">
-      <md-input id="title" name="title" [(ngModel)]="post.title" placeholder="Title" style="width: 100%"></md-input>
-      <div style="margin-top: 20px"><div id="editor" [innerHTML]="post.cabecera"></div></div>
-      <div style="margin-top: 20px"><div id="editor2" [innerHTML]="post.content"></div></div>
+      <md-input-container>
+        <input md-input id="title" name="title" [(ngModel)]="post.title" placeholder="Title" style="width: 100%">
+      </md-input-container>
+      <!--<div style="margin-top: 20px"><div id="editor" [innerHTML]="post.content"></div></div>-->
+      <md-input-container>
+        <textarea md-input id="content" name="content" [(ngModel)]="post.content" placeholder="Content"></textarea>
+      </md-input-container>
       <md-select placeholder="Categoría" [(ngModel)]="post.categoryId" #categoryControl="ngModel" [ngModelOptions]="{standalone: true}" fxFlex  style="margin-top: 20px">
         <md-option *ngFor="let category of categories" [value]="category.id"> {{ category.name }} </md-option>
       </md-select>
