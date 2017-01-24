@@ -15,8 +15,8 @@ import { AuthGuard } from '../auth-guard.service';
             path: '',
             children: [
               { path: 'blog', loadChildren: 'app/blog/blog.module#BlogModule' },
-              { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
               { path: 'users', loadChildren: 'app/users/users.module#UsersModule' },
+              { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
               { path: '', redirectTo: '/pages/inicio', pathMatch: 'full' },
             ]
           },
